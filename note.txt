@@ -1,0 +1,5 @@
+branch
+------
+one : belum pakai vuex, masih ngelish data dari api.
+two : mulai pakai vuex. 
+	00:37 -> kesel ndelok tutorial, sudah sampai klik nama bisa masuk ke masing masing club
