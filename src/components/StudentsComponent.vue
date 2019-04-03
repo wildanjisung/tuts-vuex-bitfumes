@@ -5,8 +5,8 @@
 			<li v-for="(student,index) in students" :key="student.id">
 				{{student.name}}
 				<i>{{student.games.length}} games he plays</i>
-				<button @click="addTeamMember('A', index)">Team A</button>
-				<button @click="addTeamMember('B', index)">Team B</button>
+				<button @click="addTeamMember('A', index)" :disabled="student.selected">Team A</button>
+				<button @click="addTeamMember('B', index)" :disabled="student.selected">Team B</button>
 			</li>
 		</ul>
 
