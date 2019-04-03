@@ -3,28 +3,34 @@ import Vue from 'vue'
 
 Vue.use(Vuex)
 import data from '../api/data'
-export default new Vuex.Store({
-	state: { // data
-		students: [],
-		teamA: [],
-		teamB: []
-	},
-	getters: { // computed properties
+import state from './state'
+import actions from './actions'
 
+const info = {
+	namespaced: true,
+	state: {
+		matchDate: '01/01/2021'
 	},
-	actions: { // methods
-		getStudents(context) {
-			context.commit('setStudents')
-		},
-		addTeamMember(context, data) {
-			context.commit('pushMemberToTeam', data)
-			context.commit('enableSelectedState', data.index)
-		},
-		removeFromTeam(context, data) {
-			context.commit('spliceFromTeam', data)
-			context.commit('disableSelectedState', data)
+	getters: {
+		teamAcount(state,getters,rootState) {
+			return rootState.teamA.length
 		}
 	},
+	action: {},
+	mutations: {}
+}
+
+export default new Vuex.Store({
+	modules: {
+		info: info
+	},
+	state: state,
+	getters: { // computed properties
+		studentCount(state) {
+			return state.students.length
+		}
+	},
+	actions: actions,
 	mutations: { // used for changing the state
 		setStudents(state) {
 			state.students = data.getStudents()

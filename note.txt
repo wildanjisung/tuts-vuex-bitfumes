@@ -4,3 +4,4 @@ one : belum pakai vuex, masih ngelish data dari api.
 two : mulai pakai vuex. 
 	00:37 -> kesel ndelok tutorial, sudah sampai klik nama bisa masuk ke masing masing club
 	00:47 -> selesai di klik di member masuk ke team. ketika dihapus di team maka muncul laig di member.
+three : masuk menit ke 49:00
