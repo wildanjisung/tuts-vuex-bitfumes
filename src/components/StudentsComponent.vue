@@ -19,25 +19,22 @@
 
 <script>
 import TeamComponent from "./TeamComponent";
-import store from '../store/index';
 export default {
 	components: {
 		TeamComponent
 	},
 	computed:{
 		students(){
-			return store.state.students
+			return this.$store.state.students
 		}
 	},
 	methods: {
 		addTeamMember(type, index) {
-			// console.log("he");
-			
-			store.dispatch("addTeamMember", {type, index});
+			this.$store.dispatch("addTeamMember", {type, index});
 		}
 	},
 	created() {
-		store.dispatch("getStudents")
+		this.$store.dispatch("getStudents")
 	}
 }
 </script>
